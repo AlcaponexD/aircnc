@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import logo from './assets/logo.svg';
+import api from './services/api';
+
 
 function App() {
+  function handleSubmit(){
+    console.log('hello word')
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="container">
+        <img src={logo} alt="AirCBNC"/>
+        <div className="content">
+          <p>Ofereça <strong>spots</strong> para programadores e encontre <strong>talentos</strong> para sua empresa</p>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="email">E-MAIL*</label>
+            <input 
+              id="email" 
+              type="text" 
+              placeholder="Seu melhor email" 
+            />
+            <button type="submit" className="btn">Entrar</button>
+          </form>
+        </div>
+      </div>
+
   );
 }
 
